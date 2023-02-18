@@ -9,6 +9,10 @@
 int main(void)
 {
 	int a = 48, b = 49;
+	/* int a;
+	 * int b;
+	 * a = 48;
+	 * b = 49;*/
 
 	while (a <= 56 && b <= 57)
 	{
