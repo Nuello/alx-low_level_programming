@@ -3,6 +3,7 @@
 /**
  * print_sign - prints the sign of a number
  *
+ * @n: The number whose sign is to be printed
  * Return: 1 (Success)
  * Otherwise: 0
  */
