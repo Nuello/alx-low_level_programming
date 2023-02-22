@@ -7,43 +7,40 @@
  */
 
 
-
-
-#include <unistd.h>
-
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- 
-int _putchar(char c)
+void jack_bauer(void)
 {
-	return (write(1, &c, 1));
-}*/
+	int min, sec;
 
-
-void main(void)
-{
-	int a = 48, b = 48, c = 48, d = 48;
-
-	while (a <= 50)
+	for (min = 0; min <= 23; min++)
 	{
-		for (; b <= 57; b++)
+		int m = min / 10;
+
+		for (sec = 0; sec <= 59; sec++)
 		{
-			for (c = 48; c <= 53; c++)
+			int s = sec / 10;
+
+			if (m == 0)
 			{
-				for (d = 48; d <= 57; d++)
-				{
-					_putchar(a);
-					_putchar(b);
-					_putchar(58);
-					_putchar(c);
-					_putchar(d);
-					_putchar('\n');
-				}
+				_putchar('0');
+				_putchar(min + '0');
 			}
+			else
+			{
+				_putchar(m + '0');
+				_putchar(min % 10 + '0');
+			}
+			_putchar(':');
+			if (s == 0)
+			{
+				_putchar('0');
+				_putchar(sec + '0');
+			}
+			else
+			{
+				_putchar(s + '0');
+				_putchar(sec % 10 + '0');
+			}
+			_putchar('\n');
 		}
 	}
 }
