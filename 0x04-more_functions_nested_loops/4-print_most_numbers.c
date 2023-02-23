@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_numbers - print numbers from 0 to 9
+ * print_most_numbers - print numbers from 0 to 9
  * Return (0)
  */
 
@@ -9,7 +9,7 @@ void print_most_numbers(void)
 {
 	int start = 0;
 
-	for (;start <= 9; start++)
+	for (; start <= 9; start++)
 	{
 		if (start == 2 || start == 4)
 		{

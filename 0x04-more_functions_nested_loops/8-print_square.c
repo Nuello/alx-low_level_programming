@@ -9,7 +9,7 @@
 void print_square(int size)
 {
 	int line = 1;
-	
+
 	if (size <= 0)
 	{
 		_putchar('\n');
@@ -25,4 +25,4 @@ void print_square(int size)
 		_putchar('\n');
 		line++;
 	}
-}	
+}
