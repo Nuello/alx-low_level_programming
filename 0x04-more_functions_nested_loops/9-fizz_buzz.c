@@ -3,10 +3,10 @@
 /**
  * main - prints numbers from 1 to 100, print fizz for multiples of 3,
  * buzz for multiples of 5 and fizzbuzz for multiples of 3 and 5
- * Return: 0(Success)
+ * Return: 1(Success)
  */
 
-void main(void)
+int main(void)
 {
 	int num = 1;
 
@@ -29,4 +29,5 @@ void main(void)
 		printf("%d ", num);
 		}
 	}
+	return (1);
 }
