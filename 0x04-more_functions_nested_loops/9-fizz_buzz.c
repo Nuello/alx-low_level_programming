@@ -3,7 +3,7 @@
 /**
  * main - prints numbers from 1 to 100, print fizz for multiples of 3,
  * buzz for multiples of 5 and fizzbuzz for multiples of 3 and 5
- * Return: 1(Success)
+ * Return: 0(Success)
  */
 
 int main(void)
@@ -12,7 +12,7 @@ int main(void)
 
 	for (; num <= 100; num++)
 	{
-		if ((num % 5 == 0) && (num % 3 == 0))
+		if ((num % 3 == 0) && (num % 5 == 0))
 		{
 			printf("FizzBuzz");
 		}
@@ -34,5 +34,5 @@ int main(void)
 		}
 	}
 	printf("\n");
-	return (1);
+	return (0);
 }
