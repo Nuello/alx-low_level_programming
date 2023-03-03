@@ -8,22 +8,45 @@
 
 char *cap_string(char *str)
 {
-	char separ[] = {' ','	','\n',',',';','.','!','?','"','(',')','{','}' };
+	char separ[] = {' ','\t','\n',',',';','.','!','?','"','(',')','{','}' };
 	int i, j;
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != 0; i++)
 	{
 		for (j = 0; j < 13; j++)
 		{
-			if (str[i] == '\n')
+			if ((str[i - 1] == separ[j]) && (str[i] >= 'a' && str[i] <= 'z'))
 			{
-				_putchar('\n');
+				str[i] = str[i] - 32;
 			}
-			if (str[i] == separ[j])
+			if (str[i] == '\t')
 			{
-				str[i + 1] = str[i] + 32;
+				str[i] = ' ';
 			}
 		}
 	}
 	return (str);
 }
+
+/*char *cap_string(char *str)
+{
+	int i = 0;
+
+	while (str[i] != 0)
+	{
+		if( (str[i - 1] == ' ' || str[i-1] == '\t' || str[i-1] == '\n' 
+		|| str[i-1] == ',' || str[i-1] == ';' || str[i-1] == '.' 
+		|| str[i-1] == '!' || str[i-1] == '?' || str[i-1] == '"' 
+		|| str[i-1] == '(' || str[i-1] == ')' || str[i-1] == '{' 
+		|| str[i-1] == '}' || i == 0) && (str[i] >= 'a' && str[i] <= 'z'))
+		{
+			str[i] = str[i] - 32;
+		}
+		if (str[i - 1] == '\t')
+		{
+			str[i-1] = 32;
+		}
+		i++;
+	}
+	return (str);
+}*/
