@@ -12,36 +12,15 @@ int _strlen(char *);
 
 int _strcmp(char *s1, char *s2)
 {
-	int len_s1 = _strlen(s1), len_s2 = _strlen(s2), output;
+	int i = 0;
 
-	if (len_s1 > len_s2)
+	while ((s1[i] != 0) && (s2[i] != 0))
 	{
-		output = 15;
+		if (s1[i] != s2[i])
+		{
+			return (s1[i] - s2[i]);
+		}
+		i++;
 	}
-	else if (len_s1 < len_s2)
-	{
-		output = -15;
-	}
-	else
-	{
-		output = 0;
-	}
-	return (output);
-}
-
-/**
- * _strlen - Gives the length of a string
- * @str: The string whose length we are to find
- * Return: Length of a string.
- */
-
-int _strlen(char *str)
-{
-	int len = 0;
-
-	while (str[len] != '\0')
-	{
-		len++;
-	}
-	return (len);
+	return (0);
 }
