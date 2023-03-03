@@ -9,7 +9,7 @@ int _strlen(char *);
 
 void puts_half(char *str)
 {
-	int split = ((_strlen(str) - 1) / 2);
+	int split = ((_strlen(str)) / 2);
 
 	while (str[split] != '\0')
 	{
