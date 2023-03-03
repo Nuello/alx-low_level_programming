@@ -21,10 +21,10 @@ char *cap_string(char *str)
 			{
 				str[i] = str[i] - 32;
 			}
-			if (str[i] == '\t')
+			/*if (str[i] == '\t')
 			{
 				str[i] = ' ';
-			}
+			}*/
 		}
 	}
 	return (str);
