@@ -3,7 +3,7 @@
 int main(void)
 {
 	char *s = "hello, world";
-	char *f = "olehw";
+	char *f = "oleh";
 	unsigned int n;
 
 	n = _strspn(s, f);

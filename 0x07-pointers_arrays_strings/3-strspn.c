@@ -10,11 +10,11 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int count = 0, size = sizeof(*s);
-	char *temp = s;
+	char *temp = accept;
 
-	while (*accept)
+	while (*s)
 	{
-		for (s = temp; *s != 0; s++)
+		for (accept = temp; *accept != 0; accept++)
 		{
 			if (*accept == *s)
 			{
@@ -22,8 +22,8 @@ unsigned int _strspn(char *s, char *accept)
 				break;
 			}
 		}
-		accept++;
+		s++;
 	}
-	count = (count + 1) * size;
+	count = (count) * size;
 	return (count);
 }
