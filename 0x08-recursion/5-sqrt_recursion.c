@@ -22,11 +22,10 @@ int sqrt_guess(int num, int guess)
 		guess += 1;
 	}
 	return (sqrt_guess(num, guess));
-	
 }
 
 /**
- * _sqrt - computes the square root of a given integer
+ * _sqrt_recursion - computes the square root of a given integer
  * @n: The integer whose square root is computed
  * Return: The square root of a give integer or -1 if it does not exit.
  */
