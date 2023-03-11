@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <string.h>
 
-int _putchar(char );
+int _putchar(char);
 int _islower(int);
 int _isalpha(int c);
 int _abs(int n);
