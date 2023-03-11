@@ -2,8 +2,8 @@
 
 /**
  * main - adds positive numbers
- * @argc: number of arguments passed
- * @argv: the vector containing the arguments passed
+ * @argc: The number of arguments passed
+ * @argv: the vector holding the string passed
  * Return: 0 (Success) otherwise (1)
  */
 
