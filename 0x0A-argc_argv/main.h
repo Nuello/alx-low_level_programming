@@ -8,6 +8,7 @@
 #include <ctype.h>
 
 int _isalnum(char *);
+void change_cal(int);
 
 
 #endif/* MAIN_H */
