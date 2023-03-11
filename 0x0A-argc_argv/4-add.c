@@ -1,6 +1,26 @@
 #include "main.h"
 
 /**
+ * _isalnum - checks a string if it contains alphabet and numbers
+ * @str: A pointer to the string whose length is required
+ * Return: 0 (Success) 1 otherwise
+ */
+
+int _isalnum(char *str)
+{
+	int indx, len = strlen(str);
+
+	for (indx = 0; indx < len; indx++)
+	{
+		if (!(str[indx] >= '0' && str[indx] <= '9'))
+		{
+			return (1);
+		}
+	}
+	return (0);
+}
+
+/**
  * main - adds positive numbers
  * @argc: The number of arguments passed
  * @argv: the vector holding the string passed
@@ -18,7 +38,7 @@ int main(int argc, char *argv[])
 	else
 		for (indx = 1; indx < argc; indx++)
 		{
-			if (atoi(argv[indx]) == 0)
+			if (atoi(argv[indx]) == 0 || _isalnum(argv[indx]))
 			{
 				printf("Error\n");
 				return (1);

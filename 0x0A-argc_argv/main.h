@@ -5,6 +5,9 @@
 #include <unistd.h>
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
+
+int _isalnum(char *);
 
 
 #endif/* MAIN_H */
