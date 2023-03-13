@@ -29,7 +29,11 @@ char *add_str_to_array(char *dest, char *src)
 {
 	int indx, dest_len;
 
-	if (_strlen(dest) == 0)
+	if (src == NULL || src == 0)
+	{
+		return (dest);
+	}
+	else if (_strlen(dest) == 0)
 	{
 		for (indx = 0; *src != 0; indx++, src += 1)
 		{
@@ -74,7 +78,7 @@ char *str_concat(char *s1, char *s2)
 		len2 = _strlen(s2);
 	}
 
-	new_array = malloc((sizeof(*s1) + sizeof(*s2)) * (len1 + len2));
+	new_array = malloc((sizeof(char) * 2) * ((len1 + len2) - 2));
 	if (new_array == NULL)
 	{
 		return (NULL);
