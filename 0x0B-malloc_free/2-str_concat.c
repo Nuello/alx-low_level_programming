@@ -29,18 +29,18 @@ char *add_str_to_array(char *dest, char *src)
 {
 	int indx, dest_len;
 
-	if (src == NULL || src == 0)
+	/**if (src == NULL || src == 0)
 	{
 		return (dest);
-	}
-	else if (_strlen(dest) == 0)
+	}*/
+	if (_strlen(dest) == 0) /*first string to be added*/
 	{
 		for (indx = 0; *src != 0; indx++, src += 1)
 		{
 			dest[indx] = *src;
 		}
 	}
-	else
+	else if (_strlen(dest) > 0)
 	{
 		dest_len = (_strlen(dest));
 		for (indx = dest_len; *src != 0; indx++, src += 1)
@@ -62,23 +62,27 @@ char *add_str_to_array(char *dest, char *src)
 char *str_concat(char *s1, char *s2)
 {
 	char *new_array;
-	int len1, len2;
+	int size;
 
-	if (s1 == NULL)
+	if (s1 == NULL && s2 == NULL)
 	{
-		len1 = 0;
+		size = 1;
+	}
+	else if (s1 == NULL)
+	{
+		size = sizeof(char) * (_strlen(s2));
 	}
 	else if (s2 == NULL)
 	{
-		len2 = 0;
+		size = sizeof(char) * (_strlen(s1));
 	}
 	else
 	{
-		len1 = _strlen(s1);
-		len2 = _strlen(s2);
+		size = (sizeof(char) * 2) * (_strlen(s1) + _strlen(s2));
 	}
 
-	new_array = malloc((sizeof(char) * 2) * ((len1 + len2) - 2));
+	/*new_array = malloc((sizeof(char) * 2) * ((len1 + len2) - 2))*/;
+	new_array = malloc(size);
 	if (new_array == NULL)
 	{
 		return (NULL);
@@ -89,4 +93,20 @@ char *str_concat(char *s1, char *s2)
 		add_str_to_array(new_array, s2);
 	}
 	return (new_array);
+
+	/**if (s1 != NULL && s2 != NULL)
+	{
+		len1 = _strlen(s1);
+		len2 = _strlen(s2);
+		new_array = malloc((sizeof(char) * 2) * ((len1 + len2) - 2));
+		if (new_array == NULL)
+		{
+			return (NULL);
+		}
+		else
+		{
+			add_str_to_array(new_array, s1);
+			add_str_to_array(new_array, s2);
+		}
+	}*/
 }
